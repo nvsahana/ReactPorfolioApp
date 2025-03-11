@@ -6,9 +6,10 @@ function Main() {
     <div className='MainPage'>
       <div className='MainFlexContainer'>
         <div className='LeftFlex FlexBlock'>
-          <div></div>
-          <p>Sahana Narasipura Vasudevarao</p>
-          <p>Description</p>
+          <div className="LeftFlexContent">
+            <p>Sahana Narasipura Vasudevarao</p>
+            <p>Description</p>
+          </div>
         </div>
         <div className="RightFlex FlexBlock">
           <div className="ImageContainer">
