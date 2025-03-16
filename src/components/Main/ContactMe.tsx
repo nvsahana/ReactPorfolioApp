@@ -21,6 +21,7 @@ const ContactMe: React.FC = () => {
   return (
     <div className="contact-container">
       <h2>Get In Touch</h2>
+      <hr />
       <div className="ContactContent">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -61,7 +61,7 @@ function NavBar() {
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('contactSahana')} style={{border: "None"}}>
             Get in Touch
           </button>
-          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
+          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('resume')} style={{border: "None"}}>
             Full Resume
           </button>
           <div className="navBlock navBlock3 NavLink">
