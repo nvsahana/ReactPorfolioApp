@@ -4,6 +4,7 @@ import sahana from "./assets/Sahana.jpeg";
 import { Link } from 'react-router-dom';
 import Publications from './Publications';
 import ContactMe from './ContactMe';
+import Projects from './Projects';
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   console.log(section)
@@ -27,9 +28,9 @@ const StyledButton: React.FC<ButtonProps> = ({ text, to }) => {
   );
 };
 
-const handleThis = () => {
+const handleThis = (id: string) => {
   console.log("Reached me")
-  scrollToSection('Publication')
+  scrollToSection(id);
 }
 function Main() {
   return (
@@ -43,7 +44,7 @@ function Main() {
                 <p style={{fontFamily:"Courier New"}}>I am a full-stack developer with experience in software development, AI, and cloud computing. Having worked at Toyz Electronics, Bosch, and iConsult, I specialize in Java, Python, React, and AWS. My focus is on building scalable applications, optimizing databases, and developing AI-driven solutions to enhance efficiency and innovation.</p>
                 <div className="LeftButton" style={{paddingTop:2}}>
                 {/* <StyledButton text="Let's get Started" to="/publications" /> */}
-                <button onClick={() => handleThis()}>lets get started</button>
+                <button onClick={() => handleThis('Publication')}>lets get started</button>
                 </div>
               </div>
             </div>
@@ -56,7 +57,7 @@ function Main() {
         </div>
       </section>
       <section id="Publication"><Publications /></section>
-      <section id="Projects"><Publications /></section>
+      <section id="Projects"><Projects /></section>
       <section id="contactSahana"><ContactMe /></section>
     </>
   );

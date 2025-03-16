@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { hover } from "@testing-library/user-event/dist/hover";
+// import { hover } from "@testing-library/user-event/dist/hover";
 
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
@@ -55,10 +55,10 @@ function NavBar() {
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
             Publications
           </button>
-          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
+          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Projects')} style={{border: "None"}}>
             Projects
           </button>
-          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
+          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('contactSahana')} style={{border: "None"}}>
             Get in Touch
           </button>
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
