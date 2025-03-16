@@ -1,17 +1,17 @@
 [
     {
-      "title": "Deep Learning in AI-driven Security Systems",
-      "description": "This research explores the application of deep learning in modern security systems, enhancing threat detection and automation.",
+      "title": "Autmatic Hate Speech Detection system",
+      "description": "This study focuses on hate speech detection using a novel ensemble model applied to a bilingual Twitter dataset. The approach involves TFIDF vectorization for feature extraction, considering multiple classification methods (Decision tree, SVC, Logistic Regression, Random Forest, Naive Bayes), and comparing various ensemble combinations. The final ensemble model, combining Support Vector Classifier and Random Forest, achieves an impressive 91% accuracy when tested against the dataset.",
       "link": "https://ieeexplore.ieee.org/abstract/document/10276372?casa_token=xrbYKADg_TwAAAAA:hT4Ui06DfavrMGcRUr9Tq8WcUnGusuzLaaEHI3ADUS6MCb-Zoaz-VLcFNKOXzkpSGD66wdvICOU"
     },
     {
-      "title": "Optimizing Cloud Computing Performance",
-      "description": "A study on improving efficiency in cloud computing environments using advanced resource allocation algorithms.",
+      "title": "Named Entity Recognition using Bi-LSTM and Tenserflow Model",
+      "description": "A study implementing Named Entity Recognition (NER) system using a four-layer BiLSTM model. It automates entity extraction without manual feature engineering, achieving 96.89% accuracy by understanding sentence context through sequential data processing and deep learning techniques.",
       "link":"https://www.irjet.net/archives/V9/i10/IRJET-V9I1034.pdf"
     },
     {
-      "title": "The Role of Neural Networks in Image Recognition",
-      "description": "An in-depth analysis of how neural networks improve accuracy in real-time image processing tasks.",
+      "title": "A Review on Grape Disease Detection and Classification using Image Processing ",
+      "description": "This project reviews various image processing and machine learning techniques for detecting and classifying grape plant diseases. It analyzes methods like CNN, SVM, KNN, and deep learning to improve early disease identification, aiding farmers in ensuring better crop health and food quality.",
       "link": "https://www.irjet.net/archives/V8/i9/IRJET-V8I966.pdf"
     }
 ]

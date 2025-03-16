@@ -1,0 +1,16 @@
+[
+    {
+      "title": "Water Heater Alerting System",
+      "description": "This project is a water heating alert system using Bolt IoT and Twilio. It continuously monitors water temperature through sensors, fetching real-time data from the Bolt Cloud. If the temperature exceeds predefined thresholds, it sends SMS alerts to prevent overheating, ensuring safety and efficient boiler operation through automated monitoring."
+    
+    },
+    {
+      "title": "Online Course Registration System",
+      "description": "Developed as part of my DBMS project at Bangalore Institute of Technology, this web platform, built with HTML, CSS, Angular, JavaScript, and MySQL Backend Server, was tested in a live DBMS course. It enabled 70+ students to register, while the professor managed enrollment, assignments, and tracking, demonstrating real-time database integration, automation, and scalability in education."
+    },
+    {
+      "title": "A Review on Grape Disease Detection and Classification using Image Processing ",
+      "description": "This project reviews various image processing and machine learning techniques for detecting and classifying grape plant diseases. It analyzes methods like CNN, SVM, KNN, and deep learning to improve early disease identification, aiding farmers in ensuring better crop health and food quality."
+    }
+]
+  

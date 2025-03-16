@@ -31,14 +31,13 @@
     border-radius:150px !important; 
 }
 .styled-button {
-    width: 50%;
-    background-color: #4a9b2f;
+    background-color: #4CAF50; /* Green color */
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 15px 30px;
-    border: 2px solid #73c04f; 
-    border-radius: 8px; 
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     display: flex;
@@ -48,19 +47,20 @@
     letter-spacing: 1px;
     font-family: "Courier New", monospace; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
 }
 
 .styled-button:hover {
-    background-color: #73c04f; 
-    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
-    transform: scale(1.05); 
+    background-color: #45a049; 
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.8);
+    transform: scale(1.1); 
 }
 
 .styled-button .arrow {
-    font-size: 20px;
+    font-size: 22px;
     margin-left: 10px;
 }
+
 
 
 
@@ -70,6 +70,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding-top: 5em;
     }
     .LeftFlexContent {
         width: 100%;

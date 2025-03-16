@@ -2,7 +2,11 @@ import React from 'react';
 
 function Footer() {
   return (
-       <p>Hello Footer reached!</p>
+    <>
+    <hr />
+           <p style={{textAlign:"right", paddingRight: "20px", fontStyle:"italic"}}>Copywrite &#169; 2025 Sahana Narasipura Vasudevarao</p>
+    </>
+
   );
 }
 

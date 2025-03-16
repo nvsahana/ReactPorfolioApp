@@ -96,6 +96,7 @@
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     color: beige;
+    cursor: pointer;
 }
 /* Hamburger Button */
 .hamburger {
@@ -112,6 +113,9 @@
 
 /* Responsive Styling */
 @media (max-width: 820px) {
+    .NavBarStart {
+        position: relative;
+    }
     .navBlock {
         border-bottom: 0.5px solid #282c34;
 
