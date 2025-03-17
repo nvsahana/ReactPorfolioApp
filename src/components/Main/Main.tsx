@@ -43,7 +43,7 @@ function Main() {
               <div className="LeftFlexContent">
                 <h1>Sahana Narasipura Vasudevarao</h1>
                 <p style={{fontFamily:"Courier New"}}>I am a full-stack developer with experience in software development, AI, and cloud computing. Having worked at Toyz Electronics, Bosch, and iConsult, I specialize in Java, Python, React, and AWS. My focus is on building scalable applications, optimizing databases, and developing AI-driven solutions to enhance efficiency and innovation.</p>
-                <div className="LeftButton" style={{paddingTop:2}}>
+                <div className="LeftButton">
                 {/* <StyledButton text="Let's get Started" to="/publications" /> */}
                 <button className="styled-button" onClick={() => handleThis('Publication')}>
                   Let’s get started <span className="arrow">➤</span>

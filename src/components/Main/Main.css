@@ -30,6 +30,11 @@
     height: 300px !important;
     border-radius:150px !important; 
 }
+
+.LeftButton {
+    padding-left: 30%;
+    padding-top: 3%;
+}
 .styled-button {
     background-color: #4CAF50; /* Green color */
     color: white;
@@ -65,18 +70,22 @@
 
 
 @media (max-width: 820px) {
+    .MainPage {
+        min-height: auto;
+    }
     .MainFlexContainer {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding-top: 5em;
+        padding-top: 0.1em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
     .LeftFlexContent {
         width: 100%;
-        padding: 2em;
+        padding: 0.2em;
         padding-left: 0;
-        
         text-align: center;
     }
     .LeftFlexContent p {
@@ -85,8 +94,9 @@
         
     }
     .LeftFlexContent .LeftButton{
-        width: 100%;
-        padding: 15%;
+        padding: 0;
+        margin: auto;
+        width: 60%;
     }
 
     .RightFlex .ImageContainer {
