@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Main.css";
 import sahana from "./assets/Sahana.jpeg";
-import { Link } from 'react-router-dom';
 import Publications from './Publications';
 import ContactMe from './ContactMe';
 import Projects from './Projects';
@@ -14,11 +13,6 @@ const scrollToSection = (id: string) => {
     console.log("It works, check again!")
   }
 };
-interface ButtonProps {
-  text: string;
-  to: string; // Destination link
-  onClick?: () => void;
-}
 
 // Styled Button Component (embedded in Main.tsx)
 // const StyledButton: React.FC<ButtonProps> = ({ text, to }) => {
