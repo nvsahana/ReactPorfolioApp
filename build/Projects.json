@@ -9,7 +9,7 @@
       "description": "Developed as part of my DBMS project at Bangalore Institute of Technology, this web platform, built with HTML, CSS, Angular, JavaScript, and MySQL Backend Server, was tested in a live DBMS course. It enabled 70+ students to register, while the professor managed enrollment, assignments, and tracking, demonstrating real-time database integration, automation, and scalability in education."
     },
     {
-      "title": "Evironmental Weather Station using AWS IoT Core, Thingspeak, AWS S3 and Lambda ",
+      "title": "Environmental Weather Station using AWS IoT Core, Thingspeak, AWS S3 and Lambda ",
       "description": "Designed and implemented a cloud-based IoT simulation pipeline that securely published simulated environmental data (temperature, humidity, and CO₂) to AWS IoT Core via MQTT and stored it in AWS S3 for long-term retrieval, providing hands-on experience in cloud architecture, real-time data ingestion, and IoT system functionality."
     }
 ]
