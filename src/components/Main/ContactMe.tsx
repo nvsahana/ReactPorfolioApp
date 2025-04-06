@@ -36,15 +36,27 @@ const ContactMe: React.FC = () => {
       message: formData.message,
       timestamp: new Date().toISOString(),
     };
-    const response = await fetch("/.netlify/functions/contact-submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dataToSend),
-    });
-    
-    const result = await response.json();
-    alert(result.message || "Message sent!");
-    
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxxiKGQm2nE6YCFhnLybDJZNJq3cq8BP9vYSvUCvndhP3B0MiNWpwwYE_yb_xu8asLsZw/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.text();
+      if (result === "Message submitted successfully") {
+        alert("Message sent successfully!");
+        setFormData({ email: "", mobile: "", message: "" }); // Reset form
+      } else {
+        alert("Error: " + result);
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("There was an error submitting the form.");
+    }
   };
 
   return (
