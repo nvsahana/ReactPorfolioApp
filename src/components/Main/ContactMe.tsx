@@ -12,10 +12,51 @@ const ContactMe: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
+
+    // Validation for email format
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Invalid email format");
+      return;
+    }
+
+    // Validation for mobile (example check: numeric and length between 10-15)
+    const mobileRegex = /^[0-9]{9,15}$/;
+    if (!mobileRegex.test(formData.mobile)) {
+      alert("Invalid mobile number");
+      return;
+    }
+
+    // Prepare data to send to Google Sheets
+    const dataToSend = {
+      email: formData.email,
+      mobile: formData.mobile,
+      message: formData.message,
+      timestamp: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxxiKGQm2nE6YCFhnLybDJZNJq3cq8BP9vYSvUCvndhP3B0MiNWpwwYE_yb_xu8asLsZw/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.text();
+      if (result === "Message submitted successfully") {
+        alert("Message sent successfully!");
+        setFormData({ email: "", mobile: "", message: "" }); // Reset form
+      } else {
+        alert("Error: " + result);
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("There was an error submitting the form.");
+    }
   };
 
   return (
@@ -24,7 +65,7 @@ const ContactMe: React.FC = () => {
       <hr />
       <div className="ContactContent">
         <p>
-          Fellow Developers, Recruiters and Friends! Use this section to leave a feedback or contacting me! 
+          Fellow Developers, Recruiters and Friends! Use this section to leave feedback or contact me!
         </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
