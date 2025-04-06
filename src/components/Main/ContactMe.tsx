@@ -24,7 +24,7 @@ const ContactMe: React.FC = () => {
       <hr />
       <div className="ContactContent">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Fellow Developers, Recruiters and Friends! Use this section to leave a feedback or contacting me! 
         </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
