@@ -40,6 +40,7 @@ const ContactMe: React.FC = () => {
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbxxiKGQm2nE6YCFhnLybDJZNJq3cq8BP9vYSvUCvndhP3B0MiNWpwwYE_yb_xu8asLsZw/exec", {
         method: "POST",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
@@ -47,12 +48,6 @@ const ContactMe: React.FC = () => {
       });
 
       const result = await response.text();
-      if (result === "Message submitted successfully") {
-        alert("Message sent successfully!");
-        setFormData({ email: "", mobile: "", message: "" }); // Reset form
-      } else {
-        alert("Error: " + result);
-      }
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("There was an error submitting the form.");
