@@ -9,8 +9,8 @@
       "description": "Developed as part of my DBMS project at Bangalore Institute of Technology, this web platform, built with HTML, CSS, Angular, JavaScript, and MySQL Backend Server, was tested in a live DBMS course. It enabled 70+ students to register, while the professor managed enrollment, assignments, and tracking, demonstrating real-time database integration, automation, and scalability in education."
     },
     {
-      "title": "A Review on Grape Disease Detection and Classification using Image Processing ",
-      "description": "This project reviews various image processing and machine learning techniques for detecting and classifying grape plant diseases. It analyzes methods like CNN, SVM, KNN, and deep learning to improve early disease identification, aiding farmers in ensuring better crop health and food quality."
+      "title": "Evironmental Weather Station using AWS IOT Core ",
+      "description": "Designed and implemented a cloud-based IoT simulation pipeline that securely published simulated environmental data (temperature, humidity, and CO₂) to AWS IoT Core via MQTT and stored it in AWS S3 for long-term retrieval, providing hands-on experience in cloud architecture, real-time data ingestion, and IoT system functionality.."
     }
 ]
   
