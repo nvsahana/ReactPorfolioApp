@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./ContactMe.css";
 
 const ContactMe: React.FC = () => {
@@ -15,42 +16,35 @@ const ContactMe: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validation for email format
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(formData.email)) {
       alert("Invalid email format");
       return;
     }
 
-    // Validation for mobile (example check: numeric and length between 10-15)
     const mobileRegex = /^[0-9]{9,15}$/;
     if (!mobileRegex.test(formData.mobile)) {
       alert("Invalid mobile number");
       return;
     }
 
-    // Prepare data to send to Google Sheets
-    const dataToSend = {
-      email: formData.email,
-      mobile: formData.mobile,
-      message: formData.message,
-      timestamp: new Date().toISOString(),
-    };
-
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxxiKGQm2nE6YCFhnLybDJZNJq3cq8BP9vYSvUCvndhP3B0MiNWpwwYE_yb_xu8asLsZw/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
+      await emailjs.send(
+        "service_fx1vuaq",    // from EmailJS dashboard
+        "template_kai98dx",   // from EmailJS dashboard
+        {
+          from_email: formData.email,
+          mobile: formData.mobile,
+          message: formData.message,
+          to_email: "sahananarasipuravasudevarao@gmail.com",
         },
-        body: JSON.stringify(dataToSend),
-      });
-
-      const result = await response.text();
+        "Pg8VFGRCQ4kU8-aH0"     // from EmailJS dashboard
+      );
+      alert("Message sent successfully!");
+      setFormData({ email: "", mobile: "", message: "" });
     } catch (error) {
-      console.error("Error submitting the form:", error);
-      alert("There was an error submitting the form.");
+      console.error("EmailJS error:", error);
+      alert("There was an error sending the message.");
     }
   };
 
