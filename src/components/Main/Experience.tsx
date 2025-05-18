@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Experience.css";
 
-interface Experience {
+interface ExperienceClass {
   
   empName: string;
   position: string;
@@ -10,7 +10,7 @@ interface Experience {
 }
 
 const Experience: React.FC = () => {
-  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [experiences, setExperiences] = useState<ExperienceClass[]>([]);
 
   useEffect(() => {
     fetch("Experience.json")
