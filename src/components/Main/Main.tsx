@@ -5,6 +5,8 @@ import Publications from './Publications';
 import ContactMe from './ContactMe';
 import Projects from './Projects';
 import Resume from './Resume';
+import Skills from './Skills';
+import Experience from './Experience';
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   console.log(section)
@@ -53,8 +55,10 @@ function Main() {
           </div>
         </div>
       </section>
+      <section id="Experience"><Experience /></section>
       <section id="Publication"><Publications /></section>
       <section id="Projects"><Projects /></section>
+      <section id="Skills"><Skills /></section>
       <section id="contactSahana"><ContactMe /></section>
       <section id="resume"><Resume /></section>
     </>

@@ -1,0 +1,42 @@
+.ExperiencePage {
+    min-height: 85vh;
+    text-align: center;
+    padding: 20px;
+    background-color: #282c34;
+    color: wheat;
+    padding-top: 5em;
+  }
+  
+  .ExperienceList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .ExperienceCard {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: left;
+  }
+  
+  .ExperienceCard .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Period {
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+  .Description {
+    white-space: pre-line; /* for bullet spacing from JSON */
+    margin-top: 5px;
+    font-size: 0.95rem;
+  }
+  

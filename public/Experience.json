@@ -1,0 +1,24 @@
+[
+    {
+              "empName": "CASE CO-OP @ Syracuse University (in Partnership with Toyz Electronics)",
+              "position": "Software Engineer Intern",
+              "description": "->Refactored 10+ PlayFab RESTful APIs to reduce data retrieval time by 45%, resulting in smoother course registration and updating of 8500+ users\n->Designed and deployed Oli-Torus (course platform) using React, Next.js, SpringBoot, and AWS EC2/S3, linking it to Toyz-application and enabling scalable and secure student-tutor interactions\n->Developed scalable Azure automation scripts in C# to streamline backend data updates, reducing manual input by 60% and optimizing task execution time from several hours to under 15 minutes\n->Built interactive dashboards with TypeScript, MaterialUI, and React, enabling real-time data visualization and reducing UI latency by 30%\n->Implemented Cypress and React Testing Library for integration testing, ensuring consistent quality across 20+ frontend and API features\n->Contributed to the implementation of Agile methodology using JIRA for sprint management, utilizing Git with CI/CD pipelines for version control, resolving merge conflicts, and cherry-picking commits",
+              "period": "May 2024 - May 2025"
+            
+          
+    },
+    {
+              "empName": "iConsult Collaborative at Syracuse University",
+              "position": "Web Developer, Syracuse, NY",
+              "period": "Nov 2023 – March 2024",
+              "description": "->Developed 10+ responsive UI components using React and SCSS, improving mobile usability and enhancing cross-platform performance\n->Reviewed PRs and optimized frontend logic for 4 junior developers, leading to faster QA approvals and smoother feature rollouts\n->Collaborated with cross-functional teams and clients to design modular UI layouts, improving team efficiency in feature delivery by 17%\n->Integrated RESTful APIs and microservices to enhance dynamic data fetching, improving page load speeds and reducing bounce rates on key screens"
+    },
+        {
+            "empName": "Bosch Global Software Technologies",
+            "position": "Associate Software Engineer, Bangalore, India",
+            "period": "Jul 2022 – Jul 2023",
+            "description": "->Delivered 15+ high-impact features using Angular, SpringBoot, and PostgreSQL, increasing app adoption across enterprise clients\n->Collaborated with QA and backend teams during Agile sprints to identify architecture gaps, leading to 2x faster deployment cycles\n->Engineered responsive web flows with HTML, SCSS, and TypeScript, improving session duration by 35% on key web apps"
+          }
+
+]
+  
