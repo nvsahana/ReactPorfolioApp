@@ -73,8 +73,7 @@ function Skills() {
             { name: "JIRA", image: JIRAImg}]
     }
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
-    const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
-    const [isFlipped, setIsFlipped] = useState(false);
+
 
 
 
@@ -130,7 +129,6 @@ function Skills() {
       </div>
       <button className="close-btn" onClick={() => {
         setActiveCategory(null);
-        setSelectedSkill(null);
       }}>×</button>
     </div>
   </div>
