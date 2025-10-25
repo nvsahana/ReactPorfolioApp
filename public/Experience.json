@@ -2,30 +2,34 @@
     {
               "empName": "Thursday Thrift Inc.",
               "position": "Lead Software Developer",
-              "description": "->Spearhead cross-platform full-stack development using React, Tailwind CSS, TypeScript, Flutter, FastAPI, Prisma, Nest.js and PostgreSQL, improving delivery efficiency across 3 teams by 40% (measured over 8 weeks).\n->Architected and operated a Claude-powered MCP backend layer, integrating modern AI/LLM tooling to enforce ORM safety checks, reduce high-risk DB actions by 55%, and improve long-term maintainability.\n->Refactored 30+ API endpoints and database schemas for scalability, performance optimization, and metadata efficiency, improving system reliability for production workloads.\n->Built interactive dashboards with TypeScript, MaterialUI, and React, enabling real-time data visualization and reducing UI latency by 30%\n->Deployed frontend to Vercel and backend to Railway using Docker, enabling full-stack delivery with Git CI/CD, API integration, and environment variable management across platforms.",
-              "period": "Jun 2025 - Present"
+              "description": "● Engineered a scalable full-stack system using FAST API and Prisma ORM (Python) for the backend, Next.js, TypeScript, and React for the frontend, PostgreSQL as the database, and AWS S3 for asset storage; implemented Git CI/CD and deployed on Vercel and Railway, developing onboarding features for 100+ thrift stores across the U.S. and achieving 90% user satisfaction on initial release.\n● Elevated user experience for Thursday Thrift App users by introducing intuitive swipe-based interactions for item discovery, increasing engagement and session duration by over 40%.\n ● Designed and implemented an AI-driven personalization system using user interactions (swipes, likes, and views) with K-Means clustering and item-to-item collaborative filtering to deliver tailored recommendations, improving match accuracy and user retention by 60%.",
+              "period": "Jun 2025 - Present",
+              "eImage": "/THLOGO.png"
             
           
     },
     {
               "empName": "CASE CO-OP @ Syracuse University (in Partnership with Toyz Electronics)",
               "position": "Software Engineer Intern",
-              "description": "->Refactored 10+ PlayFab RESTful APIs to reduce data retrieval time by 45%, resulting in smoother course registration and updating of 10K+ users\n->Designed and deployed Oli-Torus (course platform) using React, Next.js, Typescript, and AWS EC2/S3, linking it to Toyz-application and enabling scalable and secure student-tutor interactions\n->Strengthened platform data integrity by developing Azure HTTP trigger functions in C# to sync user metadata and publish user-generated content to the PlayFab Marketplace across web and Unity platforms.\n->Built interactive dashboards with TypeScript, MaterialUI, and React, enabling real-time data visualization and reducing UI latency by 30%\n->Implemented Cypress and React Testing Library for integration testing, ensuring consistent quality across 20+ frontend and API features\n->Contributed to the implementation of Agile methodology using JIRA for sprint management, utilizing Git with CI/CD pipelines for version control, resolving merge conflicts, and cherry-picking commits\n->Integrated OpenAI API with Microsoft PlayFab to deliver personalized career path recommendations based on user data, enhancing student engagement by ~30%.",
-              "period": "May 2024 - May 2025"
+              "description": "● Enhanced user experience for 15,000+ users by refining the UI in a React web app and Unity game, resolved key bugs and introduced seamless profile update and content viewing features, resulting in smoother navigation and a 30% increase in session retention.\n● Integrated the OpenAI API with Microsoft PlayFab’s UGC content to recommend personalized career paths for students, leveraging optimized semantic-prompting templates with response caching to minimize latency and deliver efficient, context-aware recommendations.\n● Strengthened data integrity by developing HTTP trigger functions with Azure Functions to synchronize user data and publish user-created content to Microsoft PlayFab’s marketplace across multiple platforms.\n● Refactored 30+ API calls to optimize performance and eliminate 429 rate-limit errors by offloading heavy gameplay analytics to Snowflake, reducing API failure rates by 60% and query latency by 45%; built scalable dashboards delivering engagement and progress metrics for investors, mentors, and stakeholders.",
+              "period": "May 2024 - May 2025",
+               "eImage": "/Case.jpeg"
             
           
     },
     {
               "empName": "iConsult Collaborative at Syracuse University",
               "position": "Web Developer, Syracuse, NY",
-              "period": "Aug 2023 – Aug 2024",
-              "description": "->Developed 10+ responsive UI components using React and SCSS, improving mobile usability and enhancing cross-platform performance\n->Reviewed PRs and optimized frontend logic for 4 junior developers, leading to faster QA approvals and smoother feature rollouts\n->Collaborated with cross-functional teams and clients to design modular UI layouts, improving team efficiency in feature delivery by 17%\n->Integrated RESTful APIs and microservices to enhance dynamic data fetching, improving page load speeds and reducing bounce rates on key screens"
+              "period": "Nov 2024 – Aug 2024",
+              "eImage": "iConsult.jpeg",
+              "description": "● Designed, fine-tuned, and deployed a GPT-3.5-Turbo-0125–based bias classification system using scalable embeddings and Spark-optimized data pipelines, reducing preprocessing time by 30% and re-learning overhead by 40%.\n● Led end-to-end development of a production-ready NLP model achieving real-time bias detection with latency under 100 ms, improving user interaction efficiency by 15% through secure, scalable system design and deployment practices."
     },
         {
             "empName": "Bosch Global Software Technologies",
             "position": "Associate Software Engineer, Bangalore, India",
             "period": "Jul 2022 – Jul 2023",
-            "description": "->Engineered microservices and frontend modules for the Bosch Spare Tools platform using Angular, TypeScript, Spring Boot, and SCSS, driving adoption across multiple B2B enterprise clients.\n->Streamlined integration testing workflows by automating regression suites and optimizing test data pipelines, doubling execution speed and cutting deployment cycles from 10 days to 5."
+            "eImage": "./bosch.jpeg",
+            "description": "● Developed microservices and test automation for Bosch platform using Angular, JavaScript, and Spring Boot supporting 60K+ products.\n● Researched, presented, and prototyped applications of Deep Q-Networks based Reinforcement Learning with RFID integration in efforts to optimize Bosch Spare Tools supply chain."
           }
 
 ]

@@ -1,4 +1,4 @@
-.ExperiencePage {
+ .ExperiencePage {
     min-height: 85vh;
     text-align: center;
     padding: 20px;
@@ -14,29 +14,76 @@
     max-width: 800px;
     margin: 0 auto;
   }
-  
-  .ExperienceCard {
-    background-color: #444;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: left;
-  }
-  
-  .ExperienceCard .Header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .Period {
-    font-size: 0.85rem;
-    color: #ccc;
-  }
-  
-  .Description {
-    white-space: pre-line; /* for bullet spacing from JSON */
-    margin-top: 5px;
-    font-size: 0.95rem;
-  }
-  
+
+.ExperienceCard,
+.ExperienceContainer,
+.DetailsColumn,
+.Description,
+.JobTitle,
+.EmployerName {
+  text-align: left;
+}
+
+   
+   .ExperienceCard {
+  background: #2b2b2b;
+  color: #f4e6b0;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ExperienceContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.LogoColumn {
+  flex-shrink: 0;
+}
+
+.EmployerLogo {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 8px;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.DetailsColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.TopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.JobTitle {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.Period {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.EmployerName {
+  margin-top: 6px;
+  font-size: 1.1rem;
+}
+
+.Description {
+  margin-top: 12px;
+  line-height: 1.6;
+  color: #f2e6c7;
+}

@@ -7,6 +7,7 @@ interface ExperienceClass {
   position: string;
   description: string;
   period: string;
+  eImage: string;
 }
 
 const Experience: React.FC = () => {
@@ -26,16 +27,30 @@ const Experience: React.FC = () => {
       <br />
       <div className="ExperienceList">
         {experiences.map((exp, index) => (
-          <div key={index} className="ExperienceCard">
-            <div className="Header">
-              <h3>{exp.position}</h3>
-              <span className="Period">{exp.period}</span>
+         <div className="ExperienceCard">
+          <div className="ExperienceContainer">
+            <div className="LogoColumn">
+              <img src={exp.eImage} alt={`${exp.empName} logo`} className="EmployerLogo" />
             </div>
-            <strong>{exp.empName}</strong>
-            <br />
-            <br />
-            <p className="Description">{exp.description}</p>
+
+            <div className="DetailsColumn">
+              <div className="TopRow">
+                <h3 className="JobTitle">{exp.position}</h3>
+                <span className="Period">{exp.period}</span>
+              </div>
+              <strong className="EmployerName">{exp.empName}</strong>
+              <p className="Description">
+                {exp.description.split('\n').map((line, idx) => (
+                  <span key={idx}>
+                    {line}
+                    <br />
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </div>
           </div>
+        </div>
         ))}
       </div>
     </div>
