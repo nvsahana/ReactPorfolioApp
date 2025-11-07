@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,58 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root{
+  --bg:#0f1724; /* deep page background */
+  --card:#0f172430;
+  --accent: #4CAF50;
+  --accent-2: #00d4ff;
+  --glass: rgba(255,255,255,0.06);
+  --muted: #9aa4b2;
+}
+
+html {
+  min-height: 100%;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,212,255,0.06), transparent),
+              radial-gradient(1000px 500px at 90% 90%, rgba(76,175,80,0.04), transparent),
+              var(--bg);
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #e6eef8;
+  scroll-behavior: smooth;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Utility reveal animation used across the site. Elements should get `reveal` class and when in view add `is-revealed` */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px) scale(0.995);
+  transition: opacity 600ms var(--ease, cubic-bezier(.2,.9,.3,1)), transform 600ms var(--ease, cubic-bezier(.2,.9,.3,1));
+  will-change: opacity, transform;
+}
+.reveal.is-revealed{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Floating blob behind hero image */
+.blob {
+  position: absolute;
+  filter: blur(40px) opacity(.6);
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .blob { transition: none !important; animation: none !important; }
 }

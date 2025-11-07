@@ -78,7 +78,10 @@ function Skills() {
 
 
     return (
-      <div className="skills-wrapper">
+      <div className="skills-section">
+        <h2>Skills & Technologies</h2>
+        <hr />
+        <div className="skills-wrapper">
         {Object.entries(skillsList).map(([category, skills]) => (
           <div key={category} className="flip-card">
             <div className="flip-card-inner">
@@ -134,6 +137,7 @@ function Skills() {
   </div>
 )}
 
+    </div>
     </div>
   );
 }

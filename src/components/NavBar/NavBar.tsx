@@ -41,8 +41,8 @@ function NavBar() {
         <div className="block block1"></div>
 
         {/* Hamburger Menu Button */}
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
+        <button className="hamburger" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? '✕' : '☰'}
         </button>
 
         
@@ -52,17 +52,23 @@ function NavBar() {
         <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Home')} style={{border: "None"}}>
             Home
           </button>
+          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Experience')} style={{border: "None"}}>
+            Experience
+          </button>
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Publication')} style={{border: "None"}}>
             Publications
           </button>
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Projects')} style={{border: "None"}}>
             Projects
           </button>
+          <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('Skills')} style={{border: "None"}}>
+            Skills
+          </button>
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('contactSahana')} style={{border: "None"}}>
             Get in Touch
           </button>
           <button className="navBlock navBlock2 NavLink" onClick={() => handleLinkClick('resume')} style={{border: "None"}}>
-            Full Resume
+            Resume
           </button>
           <div className="navBlock navBlock3 NavLink">
             <div> 

@@ -27,28 +27,29 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 10000;
   }
   
   .scroll-strip-wrapper {
     position: relative;
-    width: 80%;
-    max-width: 900px;
-    height: 180px;
+    width: 85%;
+    max-width: 1000px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 12px;
-    background-color: #222;
-    border: 1px solid #555;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-    padding: 1rem 2rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.2));
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+    padding: 1.5rem 2rem;
     display: flex;
-    align-items: center; /* Vertically center items */
+    align-items: center;
     justify-content: flex-start;
+    margin: 3rem 0;
   }
   
   .scroll-strip {
@@ -89,33 +90,75 @@
     font-size: 0.8rem;
     color: wheat;
   }
-  .skills-modal {
-    z-index: 2000;
-  }
   
   
   
   /* Close button */
   .close-btn {
     position: absolute;
-    top: -0.4rem;
-    right: -0.4rem;
-    font-size: 1.8rem;
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    color: white;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 2.5rem;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    border: 2px solid rgba(255,255,255,0.2);
+    color: #031018;
     cursor: pointer;
-    z-index: 1000;
-    padding: 0.4rem 0.8rem;
+    z-index: 10001;
+    padding: 0;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    transition: transform 200ms ease, background 200ms ease;
+    font-weight: 700;
   }
   
+  .close-btn:hover {
+    transform: scale(1.15) rotate(90deg);
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 8px 30px rgba(0,212,255,0.4);
+  }
+  
+  .close-btn:active {
+    transform: scale(0.95);
+  }
+  
+/* Skills Section */
+.skills-section {
+    min-height: 85vh;
+    text-align: center;
+    padding: 4rem 2rem;
+    padding-top: 6.5em;
+    color: #eaf6ff;
+}
+
+.skills-section h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+    color: #eaf6ff;
+    font-weight: 700;
+}
+
+.skills-section hr {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border: none;
+    border-radius: 2px;
+    margin: 0 auto 2.5rem auto;
+}
+
    .skills-wrapper {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .flip-card {
@@ -167,12 +210,40 @@
   .flip-card-back button {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background: black;
+    background: rgba(3,16,24,0.9);
     color: white;
-    border: none;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 200ms ease;
   }
+  
+  .flip-card-back button:hover {
+    background: rgba(3,16,24,1);
+    transform: scale(1.05);
+  }
+
+  /* Improve icon circles and flip visuals */
+  .icon-circle {
+    background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(76,175,80,0.06));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 2px 8px rgba(255,255,255,0.02) inset;
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .flip-card-front, .flip-card-back { color: #071827; }
+  .flip-card-front { background: linear-gradient(180deg,#fff,#f1f7fb); }
+  .flip-card-back { 
+    background: linear-gradient(135deg, rgba(0,212,255,0.9), rgba(76,175,80,0.85)); 
+    color: #031018;
+  }
+
+  .flip-card-inner { transition: transform 700ms cubic-bezier(.2,.9,.3,1); }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+
+  /* modal tweak */
+  .scroll-strip-wrapper { background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); }
+
   
   .circle-modal {
     position: fixed;

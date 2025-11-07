@@ -9,17 +9,21 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #282c34;
+    background: linear-gradient(180deg, rgba(15,23,36,0.95), rgba(15,23,36,0.85));
+    backdrop-filter: blur(10px);
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: 1000; /* Ensures Navbar is always on top */
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-/* When Scrolling, Reduce Opacity */
+/* When Scrolling, enhance transparency */
 .NavBarStart.transparent {
-    /* background-color: rgba(40, 44, 52, 0.7); 
-    backdrop-filter: blur(5px);  */
+    background: linear-gradient(180deg, rgba(10,14,20,0.7), rgba(10,14,20,0.5));
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
 
 
@@ -33,20 +37,46 @@
 /* Assign widths */
 .block1 {
     height: 5em;
-    width: 5%;
+    width: 3%;
+}
+
+.brand {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:10px;
+    padding-left: 12px;
+    color: #eaf6ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+.brand .logo-mark{
+    width:38px; 
+    height:38px; 
+    border-radius:10px; 
+    background:linear-gradient(135deg,var(--accent-2),var(--accent)); 
+    box-shadow:0 6px 20px rgba(0,212,255,0.3); 
+    display:inline-block;
+    transform: rotate(12deg); 
+    transition: transform 320ms cubic-bezier(.2,.9,.3,1);
+}
+.brand:hover .logo-mark{ 
+    transform: rotate(0deg) scale(1.05); 
+    box-shadow:0 8px 28px rgba(0,212,255,0.5);
 }
 
 
 
 .block2 {
     height: 5em;
-    width: 90%;
+    width: 94%;
     display: flex;
     justify-content: space-around;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     overflow: hidden;
-    background-color: grey;
+    background: transparent;
     transition: max-height 0.3s ease-in-out;
     flex-wrap: wrap; 
 }
@@ -58,8 +88,8 @@
 }
 .block3 {
     height: 5em;
-    width: 5%;
-    background-color: #282c34;
+    width: 3%;
+    background: transparent;
 }
 
 /* .navBlock {
@@ -73,13 +103,19 @@
 .navBlock {
     height: auto; 
     flex: 1 1 auto; 
-    min-width: 120px; 
+    min-width: 100px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    padding: 10px;
+    font-size: 0.95rem;
+    padding: 10px 12px;
     background-color: inherit;
+    transition: all 220ms ease;
+}
+
+.navBlock:hover {
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
 }
 
 .navBlock3 {
@@ -91,24 +127,50 @@
     color: wheat;
 }
 
+.NavLink { position: relative; }
+.NavLink::after{ 
+    content:""; 
+    position:absolute; 
+    left:10%; 
+    right:10%; 
+    bottom:-4px; 
+    height:2px; 
+    background: linear-gradient(90deg,var(--accent-2),var(--accent)); 
+    border-radius:2px; 
+    opacity:0; 
+    transform: scaleX(0.3); 
+    transition: all 280ms cubic-bezier(.2,.9,.3,1); 
+}
+.NavLink:hover::after{ 
+    opacity:1; 
+    transform: scaleX(1); 
+}
+
 
 .NavLink {
     text-decoration: none;
-    font-family: Helvetica, sans-serif;
-    color: beige;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #eaf6ff;
     cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 /* Hamburger Button */
 .hamburger {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     background: none;
     border: none;
     cursor: pointer;
-    color: white;
+    color: #eaf6ff;
     position: absolute;
     right: 15px;
     top: 15px;
+    transition: transform 200ms ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.1);
 }
 
 /* Responsive Styling */

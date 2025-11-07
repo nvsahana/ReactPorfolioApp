@@ -1,30 +1,103 @@
 .PublicationsPage {
     min-height: 85vh;
     text-align: center;
-    padding: 20px;
-    background-color: #282c34;
-    color: wheat; 
-    padding-top: 5em;
+    padding: 4rem 2rem;
+    padding-top: 6.5em;
+    color: #eaf6ff;
+}
+
+.PublicationsPage h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+    color: #eaf6ff;
+    font-weight: 700;
+}
+
+.PublicationsPage hr {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border: none;
+    border-radius: 2px;
+    margin: 0 auto 2.5rem auto;
 }
 
 .PublicationsList {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .PublicationCard {
-    background-color: #444;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    transition: transform 360ms cubic-bezier(.2,.9,.3,1), box-shadow 360ms;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.PublicationCard .Title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.PublicationCard:hover { 
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.PublicationCard .Title { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.PublicationCard .Title h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #eaf6ff;
+    font-weight: 600;
+}
+
+.PublicationCard .Title a {
+    color: var(--accent-2);
+    transition: transform 200ms ease, color 200ms ease;
+}
+
+.PublicationCard .Title a:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+}
+
+.PublicationCard p {
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+/* Optional: reveal animation if .reveal class is added to cards */
+.PublicationCard.reveal { 
+    opacity: 0; 
+    transform: translateY(24px); 
+    transition: opacity 500ms cubic-bezier(.2,.9,.3,1), transform 500ms cubic-bezier(.2,.9,.3,1);
+}
+.PublicationCard.reveal.is-revealed { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+.PublicationCard.reveal:nth-child(1).is-revealed { transition-delay: 80ms; }
+.PublicationCard.reveal:nth-child(2).is-revealed { transition-delay: 160ms; }
+.PublicationCard.reveal:nth-child(3).is-revealed { transition-delay: 240ms; }
+.PublicationCard.reveal:nth-child(4).is-revealed { transition-delay: 320ms; }
+
+@media (max-width: 768px) {
+    .PublicationsList {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
