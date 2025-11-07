@@ -54,6 +54,32 @@ body {
   transform: translateY(0) scale(1);
 }
 
+/* Animated gradient text for section headings */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #eaf6ff 0%,
+    var(--accent-2) 30%,
+    var(--accent) 50%,
+    var(--accent-2) 70%,
+    #eaf6ff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+}
+
 /* Floating blob behind hero image */
 .blob {
   position: absolute;
@@ -64,5 +90,5 @@ body {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .blob { transition: none !important; animation: none !important; }
+  .reveal, .blob, .shimmer-text { transition: none !important; animation: none !important; }
 }

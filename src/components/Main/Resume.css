@@ -34,8 +34,11 @@
 }
 
 .download-btn {
-    display: inline-block;
-    background: linear-gradient(90deg,var(--accent),var(--accent-2));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
     color: #031018;
     padding: 14px 32px;
     text-decoration: none;
@@ -44,6 +47,9 @@
     border-radius: 12px;
     box-shadow: 0 10px 36px rgba(0,0,0,0.5);
     transition: transform 220ms ease, box-shadow 220ms ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 220px;
 }
 
 .download-btn:hover {
@@ -55,3 +61,103 @@
     transform: translateY(2px) scale(.995); 
 }
 
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.truck-animation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.truck {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: -50px;
+    color: #ffffff;
+}
+
+.document {
+    font-size: 1.2rem;
+    position: absolute;
+    left: -30px;
+    opacity: 0;
+}
+
+/* Downloading animation */
+.download-btn.downloading .btn-text {
+    opacity: 0;
+}
+
+.download-btn.downloading .truck-animation {
+    opacity: 1;
+    animation: none;
+}
+
+.download-btn.downloading .truck {
+    animation: truckDrive 2s ease-in-out forwards;
+}
+
+.download-btn.downloading .document {
+    animation: documentDrop 2s ease-in-out forwards;
+}
+
+@keyframes truckDrive {
+    0% {
+        left: -50px;
+        transform: translateX(0);
+    }
+    40% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: calc(100% + 50px);
+        transform: translateX(0);
+    }
+}
+
+@keyframes documentDrop {
+    0% {
+        left: -30px;
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    35% {
+        opacity: 0;
+    }
+    45% {
+        left: 50%;
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 1;
+    }
+    55% {
+        left: 50%;
+        transform: translateX(-50%) translateY(20px) scale(1.1) rotateZ(10deg);
+        opacity: 1;
+    }
+    65% {
+        left: 50%;
+        transform: translateX(-50%) translateY(0) scale(0.9) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%) translateY(0) scale(0) rotateZ(0deg);
+        opacity: 0;
+    }
+}

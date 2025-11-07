@@ -73,8 +73,21 @@ function Skills() {
             { name: "JIRA", image: JIRAImg}]
     }
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
+    const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set());
 
-
+    const handleCardClick = (category: string) => {
+      if (window.innerWidth <= 768) {
+        setFlippedCards(prev => {
+          const newSet = new Set(prev);
+          if (newSet.has(category)) {
+            newSet.delete(category);
+          } else {
+            newSet.add(category);
+          }
+          return newSet;
+        });
+      }
+    };
 
 
     return (
@@ -83,7 +96,11 @@ function Skills() {
         <hr />
         <div className="skills-wrapper">
         {Object.entries(skillsList).map(([category, skills]) => (
-          <div key={category} className="flip-card">
+          <div 
+            key={category} 
+            className={`flip-card ${flippedCards.has(category) ? 'mobile-flipped' : ''}`}
+            onClick={() => handleCardClick(category)}
+          >
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <h3>{category}</h3>

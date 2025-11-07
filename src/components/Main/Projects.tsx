@@ -19,6 +19,7 @@ interface Project {
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     fetch("Projects.json")
@@ -27,6 +28,25 @@ const Projects: React.FC = () => {
       .catch((error) => console.error("Error loading publications:", error));
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setRevealedCards(prev => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    const cards = document.querySelectorAll('.ProjectCard');
+    cards.forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [projects]);
+
   return (
     <div className="PublicationsPage">
       <h2>My Projects</h2>
@@ -34,7 +54,12 @@ const Projects: React.FC = () => {
       <br />
       <div className="PublicationsList">
         {projects.map((proj, index) => (
-          <div key={index} className="PublicationCard">
+          <div 
+            key={index} 
+            className={`PublicationCard ProjectCard ${revealedCards.has(index) ? 'revealed' : ''}`}
+            data-index={index}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <div className="Title">
               <h3>{proj.title} </h3>
             </div>

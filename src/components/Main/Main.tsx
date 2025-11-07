@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Main.css";
 import sahana from "./assets/Sahana.jpeg";
 import Publications from './Publications';
@@ -9,6 +9,7 @@ import Skills from './Skills';
 import Experience from './Experience';
 import useReveal from '../../hooks/useReveal';
 import Typewriter from './Typewriter';
+
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   console.log(section)
@@ -31,13 +32,46 @@ const handleThis = (id: string) => {
   console.log("Reached me")
   scrollToSection(id);
 }
+
+const createParticles = () => {
+  const particlesContainer = document.querySelector('.particles-container');
+  if (!particlesContainer) return;
+
+  const particleCount = 50;
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'floating-particle';
+    
+    const size = Math.random() * 4 + 2;
+    const left = Math.random() * 100;
+    const delay = Math.random() * 20;
+    const duration = Math.random() * 20 + 15;
+    
+    particle.style.cssText = `
+      left: ${left}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-delay: ${delay}s;
+      animation-duration: ${duration}s;
+    `;
+    
+    particlesContainer.appendChild(particle);
+  }
+};
+
 function Main() {
   // kick off reveal observer for elements with data-reveal
   useReveal();
+
+  useEffect(() => {
+    createParticles();
+  }, []);
+
   return (
     <>
     <section id="Home">
         <div className='MainPage'>
+          <div className="particles-container"></div>
           <div className='MainFlexContainer'>
             <div className='LeftFlex FlexBlock reveal' data-reveal>
               <div className="LeftFlexContent">

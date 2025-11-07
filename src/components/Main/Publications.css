@@ -42,6 +42,28 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+}
+
+.PublicationCard.revealed {
+    animation: cardReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes cardReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95) rotateX(10deg);
+        filter: brightness(0.6);
+    }
+    60% {
+        filter: brightness(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+        filter: brightness(1);
+    }
 }
 
 .PublicationCard:hover { 
@@ -98,6 +120,26 @@
 @media (max-width: 768px) {
     .PublicationsList {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 3.5rem;
+    }
+
+    .PublicationCard {
+        padding: 1.5rem;
+    }
+
+    .PublicationCard .Title {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .PublicationCard .Title h3 {
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .PublicationCard p {
+        margin-top: 0;
+        line-height: 1.8;
     }
 }

@@ -12,6 +12,7 @@ interface ExperienceClass {
 
 const Experience: React.FC = () => {
   const [experiences, setExperiences] = useState<ExperienceClass[]>([]);
+  const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     fetch("Experience.json")
@@ -20,6 +21,25 @@ const Experience: React.FC = () => {
       .catch((err) => console.error("Failed to load experience:", err));
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setRevealedCards(prev => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    const cards = document.querySelectorAll('.ExperienceCard');
+    cards.forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [experiences]);
+
   return (
     <div className="ExperiencePage">
       <h2>Experience</h2>
@@ -27,7 +47,12 @@ const Experience: React.FC = () => {
       <br />
       <div className="ExperienceList">
         {experiences.map((exp, index) => (
-         <div className="ExperienceCard">
+         <div 
+           key={index}
+           className={`ExperienceCard ${revealedCards.has(index) ? 'revealed' : ''}`}
+           data-index={index}
+           style={{ animationDelay: `${index * 0.15}s` }}
+         >
           <div className="ExperienceContainer">
             <div className="LogoColumn">
               <img src={exp.eImage} alt={`${exp.empName} logo`} className="EmployerLogo" />

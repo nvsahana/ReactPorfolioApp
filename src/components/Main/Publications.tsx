@@ -21,6 +21,7 @@ interface Publication {
 
 const Publications: React.FC = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
+  const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     fetch("publications.json")
@@ -29,6 +30,25 @@ const Publications: React.FC = () => {
       .catch((error) => console.error("Error loading publications:", error));
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setRevealedCards(prev => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    const cards = document.querySelectorAll('.PublicationCard');
+    cards.forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [publications]);
+
   return (
     <div className="PublicationsPage">
       <h2>My Publications</h2>
@@ -36,7 +56,12 @@ const Publications: React.FC = () => {
       <br />
       <div className="PublicationsList">
         {publications.map((pub, index) => (
-          <div key={index} className="PublicationCard">
+          <div 
+            key={index} 
+            className={`PublicationCard ${revealedCards.has(index) ? 'revealed' : ''}`}
+            data-index={index}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <div className="Title">
               <h3>{pub.title} </h3>
               <a href={pub.link} style={{textDecoration: "None", color:"wheat"}}>

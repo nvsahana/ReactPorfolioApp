@@ -5,11 +5,13 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import ContactMe from './components/Main/ContactMe';
+import ScrollProgress from './components/ScrollProgress/ScrollProgress';
 
 
 function App() {
   return (
     <Router>
+    <ScrollProgress />
     <NavBar />
       <Routes>
         <Route path="/" element={<Main />} />
