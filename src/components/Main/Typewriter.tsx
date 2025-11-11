@@ -10,7 +10,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ words, speed = 60, pause = 1400
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
-  //added a new commit!
+
 
   useEffect(() => {
     if (index >= words.length) return;
