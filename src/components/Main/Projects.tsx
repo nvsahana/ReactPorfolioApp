@@ -20,6 +20,7 @@ interface Project {
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     fetch("Projects.json")
@@ -47,6 +48,18 @@ const Projects: React.FC = () => {
     return () => observer.disconnect();
   }, [projects]);
 
+  const toggleCard = (index: number) => {
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
   return (
     <div className="PublicationsPage">
       <h2>My Projects</h2>
@@ -56,14 +69,33 @@ const Projects: React.FC = () => {
         {projects.map((proj, index) => (
           <div 
             key={index} 
-            className={`PublicationCard ProjectCard ${revealedCards.has(index) ? 'revealed' : ''}`}
+            className={`PublicationCard ProjectCard ${revealedCards.has(index) ? 'revealed' : ''} ${expandedCards.has(index) ? 'expanded' : ''}`}
             data-index={index}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="Title">
-              <h3>{proj.title} </h3>
+            <div className="ProjectHeader" onClick={() => toggleCard(index)}>
+              <div className="Title">
+                <h3>{proj.title}</h3>
+              </div>
+              <div className="DropdownIcon">
+                <svg 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className={expandedCards.has(index) ? 'rotated' : ''}
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
             </div>
-            <p>{proj.description}</p>
+            <div className="ProjectDescription">
+              <p>{proj.description}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -1,5 +1,17 @@
 [
     {
+      "title": "Vehicle Accident Detection and Prevention System",
+      "description": "Built a two-part IoT and computer vision system combining ESP32-based hardware simulation in Wokwi (with MPU6050 IMU, OLED display, buzzer, LED alerts) and a Python drowsiness detection module using OpenCV and dlib. The CV module captures webcam frames, computes Eye Aspect Ratio (EAR), and triggers real-time alerts when drowsiness is detected, integrating ThingSpeak for data logging and Twilio for SMS notifications to prevent accidents through proactive driver monitoring."
+    },
+    {
+      "title": "Carpool Coordination System",
+      "description": "Designed and developed a full-stack Carpool Coordination System using React, TypeScript, Prisma ORM, and PostgreSQL, featuring OAuth login, and structured search across three levels (office, street, and city) to connect commuters across California. Built a multi-stage matching algorithm that enables users to send, accept, or reject carpool requests, supports progressive pairing (same office/street/city) and secure formation of 2- or 3-person groups with real-time validation of mutual connections."
+    },
+    {
+      "title": "GPU Telemetry Profiling for AI Workloads",
+      "description": "Benchmarked NVIDIA Tesla T4 GPU performance and energy behavior during AI inference workloads (ResNet-18, TinyLlama 1.1B, Stable Diffusion v1.5). Used nvidia-smi telemetry to analyze power draw, GPU utilization, and latency metrics, demonstrating energy–performance tradeoffs and achieving up to 0.9 inferences per watt. Research conducted at iConsult Collaborative, Syracuse University."
+    },
+    {
       "title": "Water Heater Alerting System",
       "description": "This project is a water heating alert system using Bolt IoT and Twilio. It continuously monitors water temperature through sensors, fetching real-time data from the Bolt Cloud. If the temperature exceeds predefined thresholds, it sends SMS alerts to prevent overheating, ensuring safety and efficient boiler operation through automated monitoring."
     

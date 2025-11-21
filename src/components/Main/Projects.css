@@ -27,7 +27,8 @@
 .PublicationsList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
+    row-gap: 7rem;
     max-width: 1200px;
     margin: 0 auto;
     align-items: stretch;
@@ -37,6 +38,7 @@
     background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     border-radius: 16px;
     padding: 2rem;
+    margin: 0;
     border: 1px solid rgba(255,255,255,0.06);
     box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     transition: transform 360ms cubic-bezier(.2,.9,.3,1), box-shadow 360ms;
@@ -69,6 +71,15 @@
     font-size: 0.98rem;
 }
 
+/* Desktop default - no dropdown icon */
+.ProjectHeader {
+    display: block;
+}
+
+.DropdownIcon {
+    display: none;
+}
+
 /* Optional: reveal animation if .reveal class is added to cards */
 .PublicationCard.reveal { opacity: 0; transform: translateY(24px); }
 .PublicationCard.reveal.is-revealed { opacity:1; transform: translateY(0); }
@@ -76,26 +87,83 @@
 @media (max-width: 768px) {
     .PublicationsList {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 1rem;
+        row-gap: 1rem;
     }
 
     .PublicationCard {
-        padding: 1.5rem;
+        padding: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        height: auto;
+    }
+
+    .PublicationCard:hover {
+        transform: none;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .ProjectHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .ProjectHeader:hover {
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
     }
 
     .PublicationCard .Title {
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 0;
+        padding: 0;
+        border: none;
+        flex: 1;
     }
 
     .PublicationCard h3 {
-        line-height: 1.5;
-        margin-bottom: 0;
+        line-height: 1.4;
+        margin: 0;
+        font-size: 1.1rem;
     }
 
-    .PublicationCard p {
-        margin-top: 0;
-        line-height: 1.8;
+    .DropdownIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+        color: var(--accent);
+        transition: transform 0.3s ease;
+    }
+
+    .DropdownIcon svg {
+        transition: transform 0.3s ease;
+    }
+
+    .DropdownIcon svg.rotated {
+        transform: rotate(180deg);
+    }
+
+    .ProjectDescription {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0 1.5rem;
+    }
+
+    .PublicationCard.expanded .ProjectDescription {
+        max-height: 1000px;
+        padding: 1.5rem;
+    }
+
+    .ProjectDescription p {
+        margin: 0;
+        line-height: 1.7;
+        color: var(--muted);
     }
 }

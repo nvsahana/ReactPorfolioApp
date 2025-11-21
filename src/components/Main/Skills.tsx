@@ -73,22 +73,6 @@ function Skills() {
             { name: "JIRA", image: JIRAImg}]
     }
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
-    const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set());
-
-    const handleCardClick = (category: string) => {
-      if (window.innerWidth <= 768) {
-        setFlippedCards(prev => {
-          const newSet = new Set(prev);
-          if (newSet.has(category)) {
-            newSet.delete(category);
-          } else {
-            newSet.add(category);
-          }
-          return newSet;
-        });
-      }
-    };
-
 
     return (
       <div className="skills-section">
@@ -98,58 +82,35 @@ function Skills() {
         {Object.entries(skillsList).map(([category, skills]) => (
           <div 
             key={category} 
-            className={`flip-card ${flippedCards.has(category) ? 'mobile-flipped' : ''}`}
-            onClick={() => handleCardClick(category)}
+            className="category-card"
+            onClick={() => setActiveCategory(category)}
           >
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <h3>{category}</h3>
-              </div>
-              <div className="flip-card-back">
-                <h3>{category}</h3>
-                <button onClick={() => setActiveCategory(category)}>View {category}</button>
-              </div>
-            </div>
+            <h3>{category}</h3>
+            <div className="card-arrow">→</div>
           </div>
         ))}
 
 {activeCategory && (
-  <div className="skills-modal">
-    <div className="scroll-strip-wrapper">
-      <div className="scroll-strip">
+  <div className="skills-modal" onClick={() => setActiveCategory(null)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <h2 className="modal-title">{activeCategory}</h2>
+      <div className="skills-grid">
         {skillsList[activeCategory].map((skill, index) => (
-          <div className="scroll-item" key={index}>
-            <div className="icon-circle">
+          <div className="skill-card" key={index} style={{ animationDelay: `${index * 0.05}s` }}>
+            <div className="skill-icon">
               {typeof skill.image === "object" ? (
-                <Icon icon={skill.image} width={36} height={36} />
+                <Icon icon={skill.image} width={48} height={48} />
               ) : typeof skill.image === "function" ? (
-                <skill.image size={36} />
+                <skill.image size={48} />
               ) : (
                 <span>{skill.name}</span>
               )}
             </div>
-            <p className="caption">{skill.name}</p>
-          </div>
-        ))}
-        {/* duplicate for looping effect */}
-        {skillsList[activeCategory].map((skill, index) => (
-          <div className="scroll-item" key={`${index}-dup`}>
-            <div className="icon-circle">
-              {typeof skill.image === "object" ? (
-                <Icon icon={skill.image} width={36} height={36} />
-              ) : typeof skill.image === "function" ? (
-                <skill.image size={36} />
-              ) : (
-                <span>{skill.name}</span>
-              )}
-            </div>
-            <p className="caption">{skill.name}</p>
+            <p className="skill-name">{skill.name}</p>
           </div>
         ))}
       </div>
-      <button className="close-btn" onClick={() => {
-        setActiveCategory(null);
-      }}>×</button>
+      <button className="close-btn" onClick={() => setActiveCategory(null)}>×</button>
     </div>
   </div>
 )}
