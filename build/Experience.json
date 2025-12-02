@@ -1,7 +1,7 @@
 [
     {
               "empName": "Thursday Thrift Inc.",
-              "position": "Lead Software Developer",
+              "position": "Lead Software Engineer",
               "description": "● Engineered a scalable full-stack system using FAST API and Prisma ORM (Python) for the backend, Next.js, TypeScript, and React for the frontend, PostgreSQL as the database, and AWS S3 for asset storage; implemented Git CI/CD and deployed on Vercel and Railway, developing onboarding features for 100+ thrift stores across the U.S. and achieving 90% user satisfaction on initial release.\n● Elevated user experience for Thursday Thrift App users by introducing intuitive swipe-based interactions for item discovery, increasing engagement and session duration by over 40%.\n ● Designed and implemented an AI-driven personalization system using user interactions (swipes, likes, and views) with K-Means clustering and item-to-item collaborative filtering to deliver tailored recommendations, improving match accuracy and user retention by 60%.",
               "period": "Jun 2025 - Present",
               "eImage": "/THLOGO.png"
@@ -26,7 +26,7 @@
     },
         {
             "empName": "Bosch Global Software Technologies",
-            "position": "Associate Software Engineer, Bangalore, India",
+            "position": " Software Engineer, Bangalore, India",
             "period": "Jul 2022 – Jul 2023",
             "eImage": "./bosch.jpeg",
             "description": "● Developed microservices and test automation for Bosch platform using Angular, JavaScript, and Spring Boot supporting 60K+ products.\n● Researched, presented, and prototyped applications of Deep Q-Networks based Reinforcement Learning with RFID integration in efforts to optimize Bosch Spare Tools supply chain."
