@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54e192c6.css",
+    "main.js": "/static/js/main.a3733820.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/Sahana.jpeg": "/static/media/Sahana.7605788ee540cef6919f.jpeg",
+    "index.html": "/index.html",
+    "main.54e192c6.css.map": "/static/css/main.54e192c6.css.map",
+    "main.a3733820.js.map": "/static/js/main.a3733820.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54e192c6.css",
+    "static/js/main.a3733820.js"
+  ]
+}
